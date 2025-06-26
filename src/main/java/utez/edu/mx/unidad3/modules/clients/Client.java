@@ -18,7 +18,7 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id", nullable = false)
-    private Long id0;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -36,20 +36,20 @@ public class Client {
     public Client() {
     }
 
-    public Client(Long id0, String name, String email, String phone, List<Warehouse> warehouses) {
-        this.id0 = id0;
+    public Client(Long id, String name, String email, String phone, List<Warehouse> warehouses) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.warehouses = warehouses;
     }
 
-    public Long getId0() {
-        return id0;
+    public Long getId() {
+        return id;
     }
 
-    public void setId0(Long id0) {
-        this.id0 = id0;
+    public void setId(Long id) {
+        this.id= id;
     }
 
     public String getName() {
