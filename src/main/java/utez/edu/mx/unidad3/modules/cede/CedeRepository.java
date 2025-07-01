@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface CedeRepository extends JpaRepository<Cede, Long> {
     List<Cede> findAll();
     Optional<Cede> findById(long id);
-    Optional<Cede> findByCode(String clave);
+    Optional<Cede> findByClave(String clave);
     Cede save(Cede cede);
 
     @Modifying
