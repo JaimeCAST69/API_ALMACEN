@@ -3,6 +3,7 @@ package utez.edu.mx.unidad3.modules.cede;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import utez.edu.mx.unidad3.utils.APIResponse;
 @RestController
 @RequestMapping("/api/cedes")
 @Tag(name = "CedeController", description = "Operaciones relacionadas con las Cedes")
+@SecurityRequirement(name = "bearerAuth")
 public class CedeController {
 
     @Autowired
@@ -22,7 +24,7 @@ public class CedeController {
             @ApiResponse(responseCode = "200", description = "Lista obtenida exitosamente"),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<APIResponse> getAllCedes() {
         APIResponse response = cedeService.findAll();
         return new ResponseEntity<>(response, response.getStatus());
