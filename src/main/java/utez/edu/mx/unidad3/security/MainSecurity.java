@@ -38,7 +38,7 @@ public class MainSecurity {
     public SecurityFilterChain doFilterInternal(HttpSecurity http) throws Exception{
         http.csrf(c-> c.disable()).cors(c-> c.configurationSource(corsRegistry())).authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/client/**").hasRole("ADMIN")
-                .requestMatchers("/api/cede/**").hasRole("EMPLOYEE")
+                .requestMatchers("/api/cedes/**").hasRole("EMPLOYEE")
                 .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
                 .requestMatchers(SWAGGER_URLS).permitAll()
                 .anyRequest().authenticated()

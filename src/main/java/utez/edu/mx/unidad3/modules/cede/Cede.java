@@ -2,6 +2,7 @@ package utez.edu.mx.unidad3.modules.cede;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import utez.edu.mx.unidad3.modules.warehouse.Warehouse;
 
 import java.util.List;
@@ -24,9 +25,11 @@ public class Cede {
     @Column(name = "clave", nullable = false, unique = true)
     private String clave;
 
+    @Pattern(regexp =  "^[A-Za-z][\\sA-Za-z]{5,}$", message = "solo aceptamos letras")
     @Column(name = "estado", nullable = false)
     private String estado;
 
+    @Pattern(regexp = "^[A-Za-z][\\sA-Za-z]{5,}$", message = "solo aceptamos letras")
     @Column(name = "municipio", nullable = false)
     private String municipio;
 
