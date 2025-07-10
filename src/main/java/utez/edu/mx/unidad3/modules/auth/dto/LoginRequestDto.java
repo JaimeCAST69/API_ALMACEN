@@ -1,6 +1,11 @@
 package utez.edu.mx.unidad3.modules.auth.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class LoginRequestDto {
+    @NotNull
+    @NotBlank
     private String username;
     private String password;
 
